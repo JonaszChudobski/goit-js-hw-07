@@ -1,5 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
+import * as bL from "../node_modules/basiclightbox/src/scripts/main.js";
 const gallery = document.querySelector(".gallery");
 const galleryItemsLength = galleryItems.length;
 
@@ -27,6 +28,12 @@ function selectImg(event) {
     return;
   }
   const selectedImg = event.target.dataset.source;
+  const instance = bL.create(
+    `
+    <img src=${selectedImg} width="800" height="600">
+`
+  );
+  instance.show();
 }
 
 console.log(galleryItems);
