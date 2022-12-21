@@ -1,10 +1,9 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-import * as bL from "../node_modules/basiclightbox/src/scripts/main.js";
 const gallery = document.querySelector(".gallery");
 const galleryItemsLength = galleryItems.length;
 
-for (let i = 0; i < galleryItemsLength; i++) {
+for (let i = galleryItemsLength - 1; i > -1; i--) {
   const preview = galleryItems[i]["preview"];
   const original = galleryItems[i]["original"];
   const description = galleryItems[i]["description"];
@@ -28,7 +27,7 @@ function selectImg(event) {
     return;
   }
   const selectedImg = event.target.dataset.source;
-  const instance = bL.create(
+  const instance = basicLightbox.create(
     `
     <img src=${selectedImg} width="800" height="600">
 `
