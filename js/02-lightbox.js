@@ -24,12 +24,4 @@ const selected = new SimpleLightbox(".gallery .gallery__item", {
   captionDelay: 250,
 });
 
-selected.addEventListener("click", selectImg);
-function selectImg(event) {
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  selected.open();
-}
-
 console.log(galleryItems);
